@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (isCorrect) {
-            sounds['celebrate'].play();
+            sounds['sfx_celebrate_horn'].play();
             sounds['kobo'].play();
             completionMessage.innerText = "Congratulation!";
             nextButton.style.display = "inline-block";

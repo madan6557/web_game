@@ -4,5 +4,5 @@ export const sounds = {
     gura: new Audio('/assets/audio/gura.mp3'),
     lily: new Audio('/assets/audio/lily.mp3'),
     ninomae: new Audio('/assets/audio/ninomae.mp3'),
-    celebrate: new Audio('/assets/audio/sfx_celebrate_horn.mp3'),
+    sfx_celebrate_horn: new Audio('/assets/audio/sfx_celebrate_horn.mp3'),
 };
