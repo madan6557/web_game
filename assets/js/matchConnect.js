@@ -89,7 +89,6 @@ document.querySelectorAll('.name-btn').forEach(button => {
 function drawConnection(sound, name, color) {
     const soundButton = document.querySelector(`.sound-btn[data-sound="${sound}"]`);
     const nameButton = document.querySelector(`.name-btn[data-name="${name}"]`);
-    // const circle = document.getElementById(`circle${soundButton.id.slice(-1)}`);
     const svg = document.getElementById('connections');
     const containerRect = document.querySelector('.container').getBoundingClientRect();
     const soundRect = soundButton.getBoundingClientRect();
@@ -97,11 +96,15 @@ function drawConnection(sound, name, color) {
 
     const lineID = `${sound}-${name}-line`; // ID based on sound and name pair
 
+    console.log(lineID);
+
     // Hapus koneksi sebelumnya jika ada
-    const prevSound = reverseMatches[name];
-    if (prevSound && prevSound !== sound) { // Pastikan suara sebelumnya bukan sama dengan suara yang baru dipasangkan
-        removeConnection(prevSound, name);
-    }
+    const lines = document.querySelectorAll(`line[id*="-line"]`);
+    lines.forEach(line => {
+        if (line.id.endsWith(`-${name}-line`)) {
+            line.parentNode.removeChild(line);
+        }
+    });
 
     const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
     line.setAttribute('id', lineID);
