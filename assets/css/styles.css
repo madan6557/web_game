@@ -24,7 +24,8 @@ body {
     position: relative;
 }
 
-.sound-buttons, .name-buttons {
+.sound-buttons,
+.name-buttons {
     display: flex;
     width: 100px;
     flex-direction: column;
@@ -45,7 +46,8 @@ button {
 }
 
 .name-btn {
-    background-color: #008CBA; /* Default color for name buttons */
+    background-color: #008CBA;
+    /* Default color for name buttons */
     color: white;
 }
 
@@ -79,16 +81,35 @@ svg {
     pointer-events: none;
 }
 
-.circle {
-    width: 20px;
-    height: 20px;
-    fill: transparent;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -40px; /* Jarak antara circle dan tombol */
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    justify-content: center;
 }
 
-.sound-btn + .circle {
-    fill: #FF5733; /* Default color untuk circle */
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.puzzle-piece.completed {
+    cursor: default;
+}
+
+.completion-message {
+    margin-top: 20px;
+    font-size: 24px;
+    color: green;
+}
+
+.next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
