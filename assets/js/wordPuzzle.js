@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const draggedChar = event.dataTransfer.getData('text/plain');
         const source = event.dataTransfer.getData('source');
 
-        console.log(source);
-
         if (event.target.classList.contains('drop-box')) {
             const existingChar = event.target.textContent;
 
