@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Permainan Puzzle Gambar</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            justify-content: center;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Permainan Puzzle Gambar</h1>
@@ -25,4 +35,5 @@
     </div>
     <script type="module" src="./assets/js/imagePuzzle.js"></script>
 </body>
+
 </html>

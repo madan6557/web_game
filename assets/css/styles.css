@@ -9,7 +9,10 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    justify-content: center;
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -81,12 +84,7 @@ svg {
     pointer-events: none;
 }
 
-.puzzle-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    justify-content: center;
-}
+
 
 .puzzle-piece {
     width: 100px;
@@ -101,10 +99,52 @@ svg {
     cursor: default;
 }
 
+.hint-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.word-container, .char-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.char-box, .drop-box {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.drop-box {
+    background-color: #ccc;
+}
+
+.drop-box.filled {
+    background-color: #fff;
+}
+
 .completion-message {
     margin-top: 20px;
     font-size: 24px;
     color: green;
+}
+
+.completion-message.success {
+    color: green;
+}
+
+.completion-message.error {
+    color: red;
 }
 
 .next-button {

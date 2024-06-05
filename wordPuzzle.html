@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permainan Puzzle Kata</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .puzzle-container {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Permainan Puzzle Kata</h1>
+        <div id="hint-message" class="hint-message"></div>
+        <div class="puzzle-container" id="puzzle-container">
+            <div class="word-container" id="word-container"></div>
+            <div class="char-container" id="char-container"></div>
+        </div>
+        <div id="completion-message" class="completion-message"></div>
+        <button id="next-button" class="next-button" style="display: none;" onclick="nextPuzzle()">Next</button>
+    </div>
+    <script type="module" src="./assets/js/wordPuzzle.js"></script>
+</body>
+
+</html>

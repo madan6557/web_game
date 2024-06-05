@@ -66,3 +66,5 @@ function nextPuzzle() {
     // Add logic for loading the next puzzle
     alert("Next puzzle not implemented yet.");
 }
+
+window.nextPuzzle = nextPuzzle;
