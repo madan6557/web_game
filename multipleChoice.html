@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz</h1>
+        <div id="question-text" class="question-text"></div>
+        <div class="quiz-container" id="quiz-container">
+        </div>
+        <div id="completion-message" class="completion-message"></div>
+        <button id="next-button" class="next-button" style="display: none;" onclick="nextQuestion()">Next</button>
+    </div>
+    <script type="module" src="./assets/js/multipleChoice.js"></script>
+</body>
+
+</html>
