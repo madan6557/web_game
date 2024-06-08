@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permainan Puzzle Mencari Kata</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .puzzle-container {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 30px);
+            grid-template-rows: repeat(12, 30px);
+            gap: 2px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        .grid-item {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .grid-item.selected {
+            background-color: yellow;
+        }
+
+        .grid-item.invalid-selection {
+            background-color: red;
+        }
+
+        .grid-item.selected-horizontal {
+            background-color: orange;
+        }
+
+        .grid-item.selected-vertical {
+            background-color: blue;
+        }
+
+        .word-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        .word-item {
+            margin: 5px 0;
+        }
+
+        .completion-message {
+            display: none;
+            font-size: 20px;
+            color: green;
+            margin-top: 20px;
+        }
+
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Find Word Puzzle</h1>
+        <div class="puzzle-container" id="puzzle-container">
+            <div class="grid-container" id="grid-container"></div>
+            <div>
+                <h2>Words</h2>
+                <div class="word-container" id="word-container"></div>
+            </div>
+        </div>
+        <div id="completion-message" class="completion-message">Congratulations!</div>
+        <button id="next-button" class="next-button" style="display: none;" onclick="nextPuzzle()">Next</button>
+    </div>
+
+
+    <script type="module" src="./assets/js/findWordPuzzle.js"></script>
+</body>
+
+</html>
