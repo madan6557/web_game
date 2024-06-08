@@ -256,3 +256,5 @@ window.onload = () => {
     createGrid(grid);
     createWordContainer(puzzles[currentPuzzle].words);
 };
+
+window.nextPuzzle = nextPuzzle;
