@@ -1,23 +1,13 @@
 import { sounds } from '../js/sounds.js';
+import { wordPuzzle } from '../js/puzzleAssets.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const words = {
-        1: "sayur",
-        2: "mayur",
-        3: "muyur",
-    };
-
-    const hints = {
-        1: "hijau",
-        2: "setelah sayur",
-        3: "setelah sayur",
-    };
-
-    let currentWordIndex = 1;
+    let currentWordIndex = 0;
 
     function initializePuzzle() {
-        const word = words[currentWordIndex];
-        const hint = hints[currentWordIndex];
+        const puzzle = wordPuzzle.level0[currentWordIndex];
+        const word = puzzle.word.toUpperCase();
+        const hint = puzzle.hint;
         const shuffledChars = shuffleArray(word.split(''));
         const wordContainer = document.getElementById('word-container');
         const charContainer = document.getElementById('char-container');
@@ -125,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const completionMessage = document.getElementById('completion-message');
 
         if (isComplete) {
-            if (currentWord === words[currentWordIndex]) {
+            if (currentWord === wordPuzzle.level0[currentWordIndex].word.toUpperCase()) {
                 sounds['sfx_celebrate_horn'].play();
                 sounds['kobo'].play();
                 completionMessage.textContent = 'Congratulations!';
@@ -188,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.nextPuzzle = function () {
         currentWordIndex++;
-        if (currentWordIndex <= Object.keys(words).length) {
+        if (currentWordIndex < wordPuzzle.level0.length) {
             initializePuzzle();
         } else {
             alert('Semua puzzle selesai!');

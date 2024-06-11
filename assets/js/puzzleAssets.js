@@ -1,7 +1,7 @@
 export const imagePuzzle = {
     level0: [
         {
-            'piece': [
+            'pieces': [
                 "/assets/img/sora-puzzle-piece-1.jpg", 
                 "/assets/img/sora-puzzle-piece-2.jpg", 
                 "/assets/img/sora-puzzle-piece-3.jpg", 
@@ -14,7 +14,7 @@ export const imagePuzzle = {
             ],
         },
         {
-            'piece': [
+            'pieces': [
                 "/assets/img/bahirian-puzzle-piece-1.jpg", 
                 "/assets/img/bahirian-puzzle-piece-2.jpg", 
                 "/assets/img/bahirian-puzzle-piece-3.jpg", 
@@ -26,23 +26,33 @@ export const imagePuzzle = {
                 "/assets/img/bahirian-puzzle-piece-9.jpg", 
             ],
         },
-    ]
+    ],
 };
 
 export const matchConect = {
     level0: [
         {
-            'sounds': {
-                marin: new Audio('/assets/audio/marin.mp3'),
-                kobo: new Audio('/assets/audio/kobo.mp3'),
-                gura: new Audio('/assets/audio/gura.mp3'),
-                lily: new Audio('/assets/audio/lily.mp3'),
-                ninomae: new Audio('/assets/audio/ninomae.mp3'),
-            },
-            'sound-name': ["marin", "kobo", "gura", "lily", "ninomae"],
-            'label': ["Marin", "Kobo", "Gura", "Lily", "Ninomae"],
+            type: 'image',
+            puzzles: [
+                { image: '/assets/img/bahirian-puzzle-piece-9.jpg', label: 'Hehe1', color: '#FF5733' },
+                { image: '/assets/img/bahirian-puzzle-piece-9.jpg', label: 'Hehe2', color: '#33FF57' },
+                { image: '/assets/img/bahirian-puzzle-piece-9.jpg', label: 'Hehe3', color: '#3357FF' },
+                { image: '/assets/img/bahirian-puzzle-piece-9.jpg', label: 'Hehe4', color: '#FF33A6' },
+                { image: '/assets/img/bahirian-puzzle-piece-9.jpg', label: 'Hehe5', color: '#FFD733' },
+            ]
         },
-    ]
+        {
+            type: 'sound',
+            puzzles: [
+                { sound: new Audio('/assets/audio/marin.mp3'), label: 'Marin', color: '#FF5733'},
+                { sound: new Audio('/assets/audio/kobo.mp3'), label: 'Kobo', color: '#33FF57'},
+                { sound: new Audio('/assets/audio/gura.mp3'), label: 'Gura', color: '#3357FF'},
+                { sound: new Audio('/assets/audio/lily.mp3'), label: 'Lily', color: '#FF33A6'},
+                { sound: new Audio('/assets/audio/ninomae.mp3'), label: 'Ninomae', color: '#FFD733'},
+            ]
+        },
+        
+    ],
 };
 
 export const multipleChoice = {
@@ -56,17 +66,25 @@ export const multipleChoice = {
             'question': "Siapa penemu bola lampu?",
             'choices': ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Albert Einstein"],
             'correctAnswer': 1
-        }
-    ]
+        },
+    ],
 };
 
 export const wordPuzzle = {
     level0: [
         {
-            'word': ["sayur", "mayur", "muyur"],
-            'hint': ["hijau", "setelah sayur", "setelah sayur"]
-        }
-    ]
+            'word': "sayur",
+            'hint': "hijau"
+        },
+        {
+            'word': "mayur",
+            'hint': "setelah sayur"
+        },
+        {
+            'word': "muyur",
+            'hint': "setelah sayur"
+        },
+    ],
 };
 
 export const findWordPuzzle = {
@@ -76,6 +94,6 @@ export const findWordPuzzle = {
         },
         {
             words: ['PYTHON', 'HTML', 'CSS', 'GRID', 'WEB']
-        }
-    ]
+        },
+    ],
 };

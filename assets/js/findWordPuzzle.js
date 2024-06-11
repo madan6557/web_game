@@ -1,13 +1,5 @@
 import { sounds } from '../js/sounds.js';
-
-const puzzles = [
-    {
-        words: ['HELLO', 'WORLD', 'CODE', 'JAVA', 'SCRIPT']
-    },
-    {
-        words: ['PYTHON', 'HTML', 'CSS', 'GRID', 'WEB']
-    }
-];
+import { findWordPuzzle } from '../js/puzzleAssets.js';
 
 let currentPuzzle = 0;
 let foundWords = new Set();
@@ -17,7 +9,7 @@ let grid = [];
 
 function createGridAndWords() {
     grid = Array.from({ length: gridSize }, () => Array(gridSize).fill(''));
-    const words = puzzles[currentPuzzle].words;
+    const words = findWordPuzzle.level0[currentPuzzle].words;
 
     words.forEach(word => {
         let placed = false;
@@ -146,7 +138,7 @@ function checkSelectedCells() {
         }, 1000);
     }
 
-    if (foundWords.size === puzzles[currentPuzzle].words.length) {
+    if (foundWords.size === findWordPuzzle.level0[currentPuzzle].words.length) {
         sounds['sfx_celebrate_horn'].play();
         sounds['kobo'].play();
         document.getElementById('completion-message').style.display = 'block';
@@ -156,7 +148,7 @@ function checkSelectedCells() {
 }
 
 function getSelectedWord() {
-    const { words } = puzzles[currentPuzzle];
+    const { words } = findWordPuzzle.level0[currentPuzzle];
     let word = '';
 
     if (selectedCells.length === 2) {
@@ -238,7 +230,7 @@ function disableGrid() {
 
 function nextPuzzle() {
     currentPuzzle++;
-    if (currentPuzzle >= puzzles.length) {
+    if (currentPuzzle >= findWordPuzzle.level0.length) {
         alert('No more puzzles!');
         return;
     }
@@ -248,13 +240,13 @@ function nextPuzzle() {
     document.getElementById('next-button').style.display = 'none';
     const grid = createGridAndWords();
     createGrid(grid);
-    createWordContainer(puzzles[currentPuzzle].words);
+    createWordContainer(findWordPuzzle.level0[currentPuzzle].words);
 }
 
 window.onload = () => {
     const grid = createGridAndWords();
     createGrid(grid);
-    createWordContainer(puzzles[currentPuzzle].words);
+    createWordContainer(findWordPuzzle.level0[currentPuzzle].words);
 };
 
 window.nextPuzzle = nextPuzzle;

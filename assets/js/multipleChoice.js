@@ -1,21 +1,10 @@
 import { sounds } from './sounds.js';
-
-const questions = [
-    {
-        question: "Apa ibu kota Indonesia?",
-        choices: ["Jakarta", "Bandung", "Surabaya", "Medan"],
-        correctAnswer: 0
-    },
-    {
-        question: "Siapa penemu bola lampu?",
-        choices: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Albert Einstein"],
-        correctAnswer: 1
-    }
-];
+import { multipleChoice } from '../js/puzzleAssets.js';
 
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
 let selectedAnswerIndex = null;
+let questions = multipleChoice.level0; // Menggunakan data dari multipleChoice
 
 function loadQuestion() {
     const questionElement = document.getElementById('question-text');

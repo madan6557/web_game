@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         puzzleContainer.innerHTML = ''; // Clear previous puzzle pieces
         pieces = []; // Reset the pieces array
 
-        puzzle.piece.forEach((src, index) => {
+        puzzle.pieces.forEach((src, index) => {
             const img = document.createElement('img');
             img.src = src;
             img.alt = `Puzzle Piece ${index + 1}`;
