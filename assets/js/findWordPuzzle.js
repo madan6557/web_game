@@ -92,6 +92,11 @@ function createWordContainer(words) {
     });
 }
 
+function setHintMessage(hint) {
+    const hintMessage = document.getElementById('hint-message');
+    hintMessage.innerText = hint;
+}
+
 function selectCell(row, col) {
     if (selectedCells.length === 0 || selectedCells.length === 1) {
         const cell = document.querySelector(`.grid-item[data-row="${row}"][data-col="${col}"]`);
@@ -241,12 +246,14 @@ function nextPuzzle() {
     const grid = createGridAndWords();
     createGrid(grid);
     createWordContainer(findWordPuzzle.level0[currentPuzzle].words);
+    setHintMessage(findWordPuzzle.level0[currentPuzzle].hint);
 }
 
 window.onload = () => {
     const grid = createGridAndWords();
     createGrid(grid);
     createWordContainer(findWordPuzzle.level0[currentPuzzle].words);
+    setHintMessage(findWordPuzzle.level0[currentPuzzle].hint);
 };
 
 window.nextPuzzle = nextPuzzle;

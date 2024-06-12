@@ -90,10 +90,13 @@ export const wordPuzzle = {
 export const findWordPuzzle = {
     level0: [
         {
-            words: ['HELLO', 'WORLD', 'CODE', 'JAVA', 'SCRIPT']
+            words: ['HELLO', 'WORLD', 'CODE', 'JAVA', 'SCRIPT'],
+            hint: "Hello World Code Java Script"
+
         },
         {
-            words: ['PYTHON', 'HTML', 'CSS', 'GRID', 'WEB']
+            words: ['LIKE', 'SHARE','SUBSCRIBE', 'DAN', 'SUPPORT'],
+            hint: "Like, share, subscribe dan support"
         },
     ],
 };
