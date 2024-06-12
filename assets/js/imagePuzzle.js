@@ -1,16 +1,16 @@
 import { sounds } from '../js/sounds.js';
+import { imagePuzzle } from '../js/puzzleAssets.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    const pieces = document.querySelectorAll(".puzzle-piece");
     const puzzleContainer = document.getElementById("puzzle-container");
     const completionMessage = document.getElementById("completion-message");
     const nextButton = document.getElementById("next-button");
 
-    // Shuffle pieces randomly
-    const shuffledPieces = Array.from(pieces).sort(() => Math.random() - 0.5);
+    let currentPuzzleIndex = 0;
+    let pieces = [];
 
-    // Append shuffled pieces to the container
-    shuffledPieces.forEach(piece => puzzleContainer.appendChild(piece));
+    // Load the first puzzle pieces
+    loadPuzzle(imagePuzzle.level0[currentPuzzleIndex]);
 
     let selectedPiece = null;
 
@@ -29,6 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    function loadPuzzle(puzzle) {
+        puzzleContainer.innerHTML = ''; // Clear previous puzzle pieces
+        pieces = []; // Reset the pieces array
+
+        puzzle.pieces.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Puzzle Piece ${index + 1}`;
+            img.className = 'puzzle-piece';
+            img.id = `piece-${index + 1}`;
+            pieces.push(img);
+            puzzleContainer.appendChild(img);
+        });
+
+        // Shuffle pieces randomly
+        const shuffledPieces = Array.from(pieces).sort(() => Math.random() - 0.5);
+
+        // Append shuffled pieces to the container
+        shuffledPieces.forEach(piece => puzzleContainer.appendChild(piece));
+
+        // Reset state
+        completionMessage.innerText = '';
+        nextButton.style.display = 'none';
+        puzzleContainer.classList.remove('completed');
+    }
 
     function swapPieces(piece1, piece2) {
         const temp = document.createElement("div");
@@ -60,11 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
             pieces.forEach(piece => piece.classList.add("completed"));
         }
     }
+
+    window.nextPuzzle = function() {
+        currentPuzzleIndex++;
+        if (currentPuzzleIndex < imagePuzzle.level0.length) {
+            loadPuzzle(imagePuzzle.level0[currentPuzzleIndex]);
+        } else {
+            alert("No more puzzles available.");
+        }
+    }
 });
-
-function nextPuzzle() {
-    // Add logic for loading the next puzzle
-    alert("Next puzzle not implemented yet.");
-}
-
-window.nextPuzzle = nextPuzzle;

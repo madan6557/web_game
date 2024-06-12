@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url(./assets/img/solaDerp.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border: solid 2px #494949;
+            background-color: #3333333a;
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            color: white;
+            border: solid 2px #185e23;
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Main Menu</h1>
+        <button onclick="window.location.href = 'findWordPuzzle.html';">Find Word Puzzle</button>
+        <button onclick="window.location.href = 'imagePuzzle.html';">Image Puzzle</button>
+        <button onclick="window.location.href = 'matchConnect.html';">Match Connect</button>
+        <button onclick="window.location.href = 'multipleChoice.html';">Multiple Choice</button>
+        <button onclick="window.location.href = 'wordPuzzle.html';">Word Puzzle</button>
+    </div>
+</body>
+
+</html>
